@@ -15,10 +15,16 @@ function createMainMenu($parent_id = 0) {
     foreach ($result as $r) {
         $hasChild = $db->query("SELECT id FROM sys_menu WHERE upper_menu_id = " . $r['id']);
         if ( $hasChild->rowCount() ) {
-            $menuHTML .= '<li class="treeview"><a href="' . $r['menu_url'] . '"><i class="' . 
-                $r['menu_icon'] . '"></i> <span>' . $r['menu_text'] . '</span><span class="' . 
-                'pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>' . 
-                '</a><ul class="treeview-menu">' . createMainMenu($r['id']) . '</ul>';
+            $menuHTML .= 
+              '<li class="treeview">
+                  <a href="' . $r['menu_url'] . '">
+                    <i class="' . $r['menu_icon'] . '"></i> <span>' . $r['menu_text'] . '</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>' . 
+                  '</a>
+                  <ul class="treeview-menu">' . 
+                    createMainMenu($r['id']) . 
+                  '</ul>' . 
+              '</li>';
         } else {
             $menuHTML .= '<li><a href="' . $r['menu_url'] . '"><i class="' . 
                 $r['menu_icon'] . '"></i> <span>' . $r['menu_text'] . 
@@ -32,5 +38,3 @@ function createMainMenu($parent_id = 0) {
 //usage
 
 echo createMainMenu();
-
-?>
