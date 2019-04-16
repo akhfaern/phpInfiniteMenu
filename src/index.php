@@ -32,8 +32,7 @@ function createMainMenu($parent_id = 0) {
                   <i class="' . $r['menu_icon'] . '"></i> <span>' . $r['menu_text'] . '</span>
                 </a>
               </li>';
-        }
-        
+        }        
     }
     return $menuHTML;
 }
