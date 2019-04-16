@@ -1,5 +1,5 @@
 # phpInfiniteMenu
-a sample to show how easy it is to create a main navigation menu with infinite subcategories. 
+a sample to show how easy it is to create a main navigation menu with infinite subcategories using a recursive php function. 
 sample code designed for adminlte
 
 MySQL Table Schema and Data
