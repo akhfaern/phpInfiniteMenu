@@ -26,9 +26,12 @@ function createMainMenu($parent_id = 0) {
                   '</ul>' . 
               '</li>';
         } else {
-            $menuHTML .= '<li><a href="' . $r['menu_url'] . '"><i class="' . 
-                $r['menu_icon'] . '"></i> <span>' . $r['menu_text'] . 
-                '</span></a></li>';
+            $menuHTML .= 
+              '<li>
+                <a href="' . $r['menu_url'] . '">
+                  <i class="' . $r['menu_icon'] . '"></i> <span>' . $r['menu_text'] . '</span>
+                </a>
+              </li>';
         }
         
     }
@@ -38,3 +41,5 @@ function createMainMenu($parent_id = 0) {
 //usage
 
 echo createMainMenu();
+
+
